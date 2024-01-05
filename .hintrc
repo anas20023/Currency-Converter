@@ -4,6 +4,7 @@
   ],
   "hints": {
     "compat-api/css": "off",
-    "axe/forms": "off"
+    "axe/forms": "off",
+    "button-type": "off"
   }
 }
