@@ -705,11 +705,6 @@ video {
   clear: none;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -818,26 +813,6 @@ video {
   display: none;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-\[screen\] {
-  height: screen;
-}
-
-.h-\[80vh\] {
-  height: 80vh;
-}
-
-.h-\[90vh\] {
-  height: 90vh;
-}
-
-.h-\[82vh\] {
-  height: 82vh;
-}
-
 .h-\[72vh\] {
   height: 72vh;
 }
@@ -852,22 +827,6 @@ video {
 
 .w-\[weird-and-invalid\] {
   width: weird-and-invalid;
-}
-
-.min-w-\[\] {
-  min-width: ;
-}
-
-.min-w-\[800\] {
-  min-width: 800;
-}
-
-.min-w-\[800px\] {
-  min-width: 800px;
-}
-
-.min-w-\[600px\] {
-  min-width: 600px;
 }
 
 .min-w-\[400px\] {
@@ -1841,19 +1800,48 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-gray-600 {
+.bg-orange-800 {
   --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
-
-.bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  background-color: rgb(154 52 18 / var(--tw-bg-opacity));
 }
 
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-red-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+}
+
+.bg-\[FF004D\] {
+  background-color: FF004D;
+}
+
+.bg-\[\#FF004D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 0 77 / var(--tw-bg-opacity));
+}
+
+.bg-\[white\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#1D2B53\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 43 83 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#FAEF5D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 239 93 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#7E2553\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 37 83 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -2026,27 +2014,13 @@ video {
   vertical-align: super;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .font-bold {
   font-weight: 700;
-}
-
-.font-semibold {
-  font-weight: 600;
 }
 
 .uppercase {
@@ -2129,6 +2103,21 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#1D2B53\] {
+  --tw-text-opacity: 1;
+  color: rgb(29 43 83 / var(--tw-text-opacity));
+}
+
+.text-\[white\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#FF004D\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 0 77 / var(--tw-text-opacity));
 }
 
 .underline {
