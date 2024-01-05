@@ -7,6 +7,35 @@
     <title>Currency Converter</title>
   </head>
   <body>
+    <div
+      class="flex flex-col justify-between items-center mx-auto bg-gray-800 h-[70vh] w-[400px] mt-20 rounded-lg shadow-lg p-4 py-6">
+      <h2 class="text-white text-2xl font-bold">Currency Converter</h2>
+      <form action="#" class="w-11/12 h-5/6">
+        <label class="text-white text-sm mb-4" for="from">Enter Amount</label>
+        <input
+          type="text"
+          id="default-input"
+          value="1"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+        <div
+          class="flex flex-row justify-between items-center w-full h-[50px]">
+          <div class="flex flex-row">
+            <img class="w-8 h-full object-cover" src="https://flagsapi.com/US/flat/64.png" alt="" />
+            <select>
+              <option value="BDT">BDT</option>
+              <option value="USD">USD</option>
+            </select>
+          </div>
+          <div class="flex flex-row justify-center items-center">
+            <img class="w-8 h-full" src="https://flagsapi.com/BD/flat/64.png" alt="" />
+            <select class="h-8 w-20 px-4 py-1">
+              <option value="BDT">BDT</option>
+              <option value="USD">USD</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
