@@ -877,10 +877,6 @@ video {
   width: 100%;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
 .flex-auto {
   flex: 1 1 auto;
 }
@@ -953,6 +949,10 @@ video {
 
 .transform-none {
   transform: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .touch-auto {
