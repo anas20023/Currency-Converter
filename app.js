@@ -3,13 +3,13 @@ let from_img = document.querySelector("#from_img");
 let to_img = document.querySelector("#to_img");
 const Optn = document.querySelectorAll(".select_itm");
 let Base_url =
-  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/bdt.json";
+  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
 let Submt_btn = document.querySelector("#submit");
 let Amnt = document.querySelector("#Amount");
 let Amnt_val, newURL;
 const from_curr = document.querySelector("#from_curr");
 const to_curr = document.querySelector("#to_curr");
-
+let msg = document.querySelector("#msg");
 /// Currency List
 for (let select of Optn) {
   for (let crr_code in countryList) {
@@ -49,6 +49,14 @@ Submt_btn.addEventListener("click", (evt) => {
       alert("Please Enter an amount!");
     }
     Amnt_val = 1;
-    console.log(from_curr);
   }
+  newURL = `${Base_url}/${from_curr.value.toLowerCase()}/${to_curr.value.toLowerCase()}.json`;
+  Get_Exchange_Rate();
 });
+
+let Get_Exchange_Rate = async () => {
+  let response = await fetch(newURL);
+  let rate = await response.json();
+  let final_rate = rate[to_curr.value.toLowerCase()] * Amnt_val;
+  msg.innerHTML = `${Amnt_val} ${from_curr.value} = ${final_rate} ${to_curr.value}`;
+};
