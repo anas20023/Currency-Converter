@@ -7,7 +7,7 @@ let Base_url =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/bdt.json";
 let Submt_btn = document.querySelector("#submit");
 let Amnt = document.querySelector("#Amount");
-let Amnt_val, newURL;
+let Amnt_val, newURL, seclt_evt;
 
 /// Currency List
 for (let select of Optn) {
