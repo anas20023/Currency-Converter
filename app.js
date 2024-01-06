@@ -25,18 +25,13 @@ for (let select of Optn) {
   }
 }
 /// For Flag Change
-Optn.forEach((sbt) => {
-  sbt.addEventListener("change", (evt) => {
-    let New_src = `https://flagsapi.com/${
-      countryList[evt.target.value]
-    }/flat/64.png`;
-    if (evt.target.name === "from") {
-      from_img.src = New_src;
-    } else if (evt.target.name === "to") {
-      to_img.src = New_src;
-    }
-  });
-});
+let Get_Exchange_Rate = async () => {
+  let response = await fetch(newURL);
+  let rate = await response.json();
+  let final_rate = rate[to_curr.value.toLowerCase()] * Amnt_val;
+  final_rate = Math.round(final_rate * 100) / 100;
+  msg.innerHTML = `${Amnt_val} ${from_curr.value} = ${final_rate} ${to_curr.value}`;
+};
 /// For Currency Convert
 Submt_btn.addEventListener("click", (evt) => {
   evt.preventDefault();
@@ -53,11 +48,20 @@ Submt_btn.addEventListener("click", (evt) => {
   newURL = `${Base_url}/${from_curr.value.toLowerCase()}/${to_curr.value.toLowerCase()}.json`;
   Get_Exchange_Rate();
 });
-
-let Get_Exchange_Rate = async () => {
-  let response = await fetch(newURL);
-  let rate = await response.json();
-  let final_rate = rate[to_curr.value.toLowerCase()] * Amnt_val;
-  msg.innerHTML = `${Amnt_val} ${from_curr.value} = ${final_rate} ${to_curr.value}`;
-};
-window.addEventListener("load".Get_Exchange_Rate);
+Optn.forEach((sbt) => {
+  sbt.addEventListener("change", (evt) => {
+    let New_src = `https://flagsapi.com/${
+      countryList[evt.target.value]
+    }/flat/64.png`;
+    if (evt.target.name === "from") {
+      from_img.src = New_src;
+    } else if (evt.target.name === "to") {
+      to_img.src = New_src;
+    }
+  });
+});
+window.addEventListener("load", () => {
+  Amnt_val = parseFloat(Amnt.value);
+  newURL = `${Base_url}/${from_curr.value.toLowerCase()}/${to_curr.value.toLowerCase()}.json`;
+  Get_Exchange_Rate();
+});
