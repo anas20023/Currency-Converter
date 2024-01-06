@@ -8,6 +8,8 @@ let Base_url =
 let Submt_btn = document.querySelector("#submit");
 let Amnt = document.querySelector("#Amount");
 let Amnt_val, newURL, seclt_evt;
+const from_curr = document.querySelector(".from select");
+const to_curr = document.querySelector(".to select");
 
 /// Currency List
 for (let select of Optn) {
@@ -41,16 +43,13 @@ Submt_btn.addEventListener("click", (evt) => {
   evt.preventDefault();
   Amnt_val = parseFloat(Amnt.value);
   // newURL=`${Base_url}/${}`
-  if (Amnt_val < 1) {
+  if (Amnt_val < 1 || Amnt_val == "") {
     Amnt.value = 1;
-    Amnt_val = parseFloat(Amnt.value);
+    if (Amnt_val == "") {
+      Amnt.value = 1;
+      alert("Please Enter an amount!");
+    }
+    Amnt_val = 1;
+    console.log("FUCK");
   }
-  Get_rate();
 });
-
-/// Data From API
-
-let Get_rate = async () => {
-  //let response = await fetch();
-  console.log(Amnt_val);
-};
