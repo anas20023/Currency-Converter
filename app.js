@@ -3,6 +3,8 @@
 let from_img = document.querySelector("#from_img");
 let to_img = document.querySelector("#to_img");
 const Optn = document.querySelectorAll(".select_itm");
+let Base_url =
+  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/bdt.json";
 
 /// Currency List
 for (let select of Optn) {
