@@ -26,11 +26,18 @@ for (let select of Optn) {
 }
 /// For Flag Change
 let Get_Exchange_Rate = async () => {
-  let response = await fetch(newURL);
-  let rate = await response.json();
-  let final_rate = rate[to_curr.value.toLowerCase()] * Amnt_val;
-  final_rate = Math.round(final_rate * 100) / 100;
-  msg.innerHTML = `${Amnt_val} ${from_curr.value} = ${final_rate} ${to_curr.value}`;
+  try {
+    document.getElementById("loader").style.display = "block";
+    let response = await fetch(newURL);
+    let rate = await response.json();
+    let final_rate = rate[to_curr.value.toLowerCase()] * Amnt_val;
+    final_rate = Math.round(final_rate * 100) / 100;
+    msg.innerHTML = `${Amnt_val} ${from_curr.value} = ${final_rate} ${to_curr.value}`;
+    document.getElementById("loader").style.display = "none";
+  } catch (err) {
+    console.log(err);
+    document.getElementById("loader").style.display = "none";
+  }
 };
 /// For Currency Convert
 Submt_btn.addEventListener("click", (evt) => {
