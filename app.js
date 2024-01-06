@@ -60,3 +60,4 @@ let Get_Exchange_Rate = async () => {
   let final_rate = rate[to_curr.value.toLowerCase()] * Amnt_val;
   msg.innerHTML = `${Amnt_val} ${from_curr.value} = ${final_rate} ${to_curr.value}`;
 };
+window.addEventListener("load".Get_Exchange_Rate);
